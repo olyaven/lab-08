@@ -30,27 +30,27 @@ Console.WriteLine("Ввод завершён");
 //---
 
 
-int sum = 0;
-int count = 0;
+int sum2 = 0;
+int count2 = 0;
 int maxGrade = 0;
 
 Console.WriteLine("Вводите оценки, для завершения введите -1:");
 
-int grade = int.Parse(Console.ReadLine());
+int grade2 = int.Parse(Console.ReadLine());
 
-while (grade != -1) {
-    sum += grade;
-    count++;
+while (grade2 != -1) {
+    sum2 += grade2;
+    count2++;
 
-    if (count == 1 || grade > maxGrade) {
-        maxGrade = grade;
+    if (count2 == 1 || grade2 > maxGrade) {
+        maxGrade = grade2;
     }
 
-    grade = int.Parse(Console.ReadLine());
+    grade2 = int.Parse(Console.ReadLine());
 }
 
-if (count > 0) {
-    Console.WriteLine($"Средний балл: {(double)sum / count}");
+if (count2 > 0) {
+    Console.WriteLine($"Средний балл: {(double)sum2 / count2}");
     Console.WriteLine($"Наибольшая оценка: {maxGrade}");
 } else {
     Console.WriteLine("Оценок не было введено");
@@ -92,3 +92,59 @@ do {
 } while (answer == "да");
 
 Console.WriteLine("Дневник сохранён");
+
+//TASK A
+
+int N = 7;
+
+for (int i = 1; i <= 10; i++) {
+    Console.WriteLine($"{N} * {i} = {N * i}");
+}
+
+//TASK B
+
+int count3 = 0;
+
+Console.WriteLine("Вводите имена учеников. Для завершения введите «конец»:");
+
+string name = Console.ReadLine();
+
+while (name != "конец") {
+    count3++;
+    name = Console.ReadLine();
+}
+
+Console.WriteLine($"Количество имён: {count3}");
+
+//VAR 2
+
+int sum3 = 0;
+
+Console.WriteLine("Вводите целые числа. Для завершения введите 0:");
+
+int number = int.Parse(Console.ReadLine());
+
+while (number != 0) {
+    if (number > 0) {
+        sum3 += number;
+    }
+
+    number = int.Parse(Console.ReadLine());
+}
+
+Console.WriteLine($"Сумма положительных чисел: {sum3}");
+
+//VAR 7
+
+double sum4 = 0;
+
+for (int day = 1; day <= 7; day++) {
+    Console.Write($"Введите температуру за день {day}: ");
+    double temperature = double.Parse(Console.ReadLine());
+
+    sum4 += temperature;
+}
+
+double average = sum4 / 7;
+
+Console.WriteLine($"Средняя температура за неделю: {average}");
